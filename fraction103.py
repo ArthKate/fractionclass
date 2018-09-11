@@ -1,4 +1,5 @@
 class Fraction:
+    
     def __init__(self, top, bottom):
         self.num = top
         self.den = bottom
@@ -15,6 +16,7 @@ class Fraction:
             oldn = m
 
             m = oldn
+<<<<<<< HEAD
             n = oldm % oldn
             return n
 
@@ -29,4 +31,19 @@ class Fraction:
 f1 = Fraction(1, 4)
 f2 = Fraction(1, 2)
 f3 = f1 + f2
+=======
+            n = oldm%oldn
+            return n    
+    
+    def __add__(self,otherfraction):
+        newnum = self.num*otherfraction.den + self.den*otherfraction.num
+        newden = self.den * otherfraction.den
+        common = self.gcd(newnum,newden)
+        return Fraction(newnum//common,newden//common)
+            
+    
+f1=Fraction(1,4)
+f2=Fraction(1,2)
+f3=f1+f2
+>>>>>>> refs/remotes/origin/master
 print(f3)
