@@ -1,5 +1,6 @@
 
 class Fraction:
+    
     def __init__(self, top, bottom):
         self.num = top
         self.den = bottom
@@ -17,13 +18,12 @@ class Fraction:
             
             m = oldn
             n = oldm%oldn
-            return n
-          
+            return n    
     
     def __add__(self,otherfraction):
         newnum = self.num*otherfraction.den + self.den*otherfraction.num
         newden = self.den * otherfraction.den
-        common = gcd(newnum,newden)
+        common = self.gcd(newnum,newden)
         return Fraction(newnum//common,newden//common)
             
     
